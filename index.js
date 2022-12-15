@@ -25,11 +25,11 @@ function encrypt(string, shift = 3) {
   let splittedString = string.split("")
   splittedString.forEach(element => {
 
-    console.log(element)
+    let index = upperAlphabets.indexOf(element)
+    splittedString.splice(index, 1, upperAlphabets[index + shift])
 
   })
 
+  return splittedString.join("")
+
 }
-
-
-console.log(encrypt("ABC"))
