@@ -27,16 +27,14 @@ function encrypt(string, shift = 3) {
 
     if (element != " " && (element.toUpperCase() === element)) {
 
-      let index = upperAlphabets.indexOf(element)
-      splittedString.splice(i, 1, upperAlphabets[(index + shift) % 26])
+      splittedString.splice(i, 1, upperAlphabets[(upperAlphabets.indexOf(element) + shift) % 26])
 
     }
 
 
     if (element != " " && (element.toLowerCase() === element)) {
 
-      let index = lowerAlphabets.indexOf(element)
-      splittedString.splice(i, 1, lowerAlphabets[(index + shift) % 26])
+      splittedString.splice(i, 1, lowerAlphabets[(lowerAlphabets.indexOf(element) + shift) % 26])
 
     }
 
@@ -46,3 +44,5 @@ function encrypt(string, shift = 3) {
   return splittedString.join("")
 
 }
+
+console.log(encrypt("Shone Binu"))
