@@ -23,13 +23,19 @@ const lowerAlphabets = [
 function encrypt(string, shift = 3) {
 
   let splittedString = string.split("")
-  splittedString.forEach(element => {
+  splittedString.forEach((element, i) => {
 
-    let index = upperAlphabets.indexOf(element)
-    splittedString.splice(index, 1, upperAlphabets[index + shift])
+    if (element != " ") {
 
+      let index = upperAlphabets.indexOf(element)
+      splittedString.splice(i, 1, upperAlphabets[(index + shift) % 26])
+
+    }
   })
 
   return splittedString.join("")
 
 }
+
+
+console.log(encrypt("SHONE AXB"))
