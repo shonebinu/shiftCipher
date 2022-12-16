@@ -44,5 +44,3 @@ function encrypt(string, shift = 3) {
   return splittedString.join("")
 
 }
-
-console.log(encrypt("Shone Binu"))
