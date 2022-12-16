@@ -44,3 +44,27 @@ function encrypt(string, shift = 3) {
   return splittedString.join("")
 
 }
+
+
+function decrypt(string, shift = 3) {
+
+  let splittedString = string.split("")
+  splittedString.forEach((element, i) => {
+
+    if (element != " " && (element.toUpperCase() === element)) {
+
+      splittedString.splice(i, 1, upperAlphabets[(upperAlphabets.indexOf(element) - shift) % 26])
+
+    }
+
+    if (element != " " && (element.toLowerCase() === element)) {
+
+      splittedString.splice(i, 1, lowerAlphabets[(lowerAlphabets.indexOf(element) - shift) % 26])
+
+    }
+
+  })
+
+  return splittedString.join("")
+
+}
