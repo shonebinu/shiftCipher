@@ -25,17 +25,24 @@ function encrypt(string, shift = 3) {
   let splittedString = string.split("")
   splittedString.forEach((element, i) => {
 
-    if (element != " ") {
+    if (element != " " && (element.toUpperCase() === element)) {
 
       let index = upperAlphabets.indexOf(element)
       splittedString.splice(i, 1, upperAlphabets[(index + shift) % 26])
 
     }
+
+
+    if (element != " " && (element.toLowerCase() === element)) {
+
+      let index = lowerAlphabets.indexOf(element)
+      splittedString.splice(i, 1, lowerAlphabets[(index + shift) % 26])
+
+    }
+
+
   })
 
   return splittedString.join("")
 
 }
-
-
-console.log(encrypt("SHONE AXB"))
