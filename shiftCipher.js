@@ -2,6 +2,10 @@
 
 //Shift Cipher program which supports both the alphabet cases, default shift is 3 (Caesar Cipher)
 
+function mod(n, m) {
+  return ((n % m) + m) % m;
+}
+
 const upperAlphabets = [
   'A', 'B', 'C', 'D', 'E', 'F',
   'G', 'H', 'I', 'J', 'K', 'L',
@@ -53,13 +57,13 @@ function decrypt(string, shift = 3) {
 
     if (element != " " && (element.toUpperCase() === element)) {
 
-      splittedString.splice(i, 1, upperAlphabets[(upperAlphabets.indexOf(element) - shift) % 26])
+      splittedString.splice(i, 1, upperAlphabets[mod((upperAlphabets.indexOf(element) - shift), 26)])
 
     }
 
     if (element != " " && (element.toLowerCase() === element)) {
 
-      splittedString.splice(i, 1, lowerAlphabets[(lowerAlphabets.indexOf(element) - shift) % 26])
+      splittedString.splice(i, 1, lowerAlphabets[mod((lowerAlphabets.indexOf(element) - shift), 26)])
 
     }
 
@@ -68,3 +72,6 @@ function decrypt(string, shift = 3) {
   return splittedString.join("")
 
 }
+
+//Add support for negative shifts.
+//If possible, try to make a linear cipher.
