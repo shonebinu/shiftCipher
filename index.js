@@ -28,14 +28,11 @@ function encrypt(string, shift = 3) {
   let splittedString = string.split("")
   splittedString.forEach((element, i) => {
 
-    if (element != " " && (element.toUpperCase() === element)) {
+    if (upperAlphabets.includes(element)) {
 
       splittedString.splice(i, 1, upperAlphabets[(upperAlphabets.indexOf(element) + shift) % 26])
 
-    }
-
-
-    if (element != " " && (element.toLowerCase() === element)) {
+    } else if (lowerAlphabets.includes(element)) {
 
       splittedString.splice(i, 1, lowerAlphabets[(lowerAlphabets.indexOf(element) + shift) % 26])
 
