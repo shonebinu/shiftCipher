@@ -54,13 +54,11 @@ function decrypt(string, shift = 3) {
   let splittedString = string.split("")
   splittedString.forEach((element, i) => {
 
-    if (element != " " && (element.toUpperCase() === element)) {
+    if (upperAlphabets.includes(element)) {
 
       splittedString.splice(i, 1, upperAlphabets[mod((upperAlphabets.indexOf(element) - shift), 26)])
 
-    }
-
-    if (element != " " && (element.toLowerCase() === element)) {
+    } else if (lowerAlphabets.includes(element)) {
 
       splittedString.splice(i, 1, lowerAlphabets[mod((lowerAlphabets.indexOf(element) - shift), 26)])
 
@@ -75,6 +73,13 @@ function decrypt(string, shift = 3) {
 
 const textBox = document.querySelector("#textbox")
 const encryptButton = document.querySelector(".enc")
-const decryptButtono = document.querySelector(".dec")
+const decryptButton = document.querySelector(".dec")
+const shiftInput = document.querySelector("#shiftinput")
 
-console.log(encrypt("Shone"))
+encryptButton.addEventListener("click", () => {
+  textBox.value = encrypt(textBox.value, shiftInput.valueAsNumber)
+})
+
+decryptButton.addEventListener("click", () => {
+  textBox.value = decrypt(textBox.value, shiftInput.valueAsNumber)
+})
