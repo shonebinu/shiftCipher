@@ -66,6 +66,7 @@ function decrypt(string, shift = 3) {
   return splittedString.join("")
 
 }
+// End of ShiftCipher
 
 
 const textBox = document.querySelector("#textbox")
