@@ -89,20 +89,12 @@ img:hover {
   background-color: #0f766e;
   color: #fff;
   border: none;
-  border-radius: 10px;
-  padding: 15px;
-  min-height: 30px;
-  min-width: 130px;
 }
 
 .dec {
   background-color: #7f1d1d;
   color: #fff;
   border: none;
-  border-radius: 10px;
-  padding: 15px;
-  min-height: 30px;
-  min-width: 130px;
 }
 
 .enc:hover {
@@ -118,6 +110,9 @@ img:hover {
 .enc,
 .dec {
   border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 7vw;
 }
 
 .enc:active,
