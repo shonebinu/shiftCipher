@@ -1,7 +1,6 @@
 "use strict"
 
-//Shift Cipher program which supports both the alphabet cases, default shift is 3 (Caesar Cipher)
-
+//ShiftCipher
 function mod(n, m) {
   return ((n % m) + m) % m;
 }
@@ -73,5 +72,9 @@ function decrypt(string, shift = 3) {
 
 }
 
-//Add support for negative shifts.
-//If possible, try to make a linear cipher.
+
+const textBox = document.querySelector("#textbox")
+const encryptButton = document.querySelector(".enc")
+const decryptButtono = document.querySelector(".dec")
+
+console.log(encrypt("Shone"))
