@@ -1,8 +1,11 @@
 # shiftCipher
-shiftCipher
 
-Shift Cipher program which supports both the alphabet cases
+A simple encryption program (Shift-Cipher) to learn the basics of encryption and decryption.
 
+[Shift-Cipher Live Demo](https://shonebinu.github.io/shiftCipher/)
+![Shift-Cipher Webapp screenshot](demoLive.png)
 
-Add support for negative shifts.
-Add support for linear cipher.
+## Features
+- Unlimited Shift Value
+- Near Instant Results
+- Supports both encryption and decryption
