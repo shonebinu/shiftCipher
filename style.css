@@ -25,8 +25,8 @@ textarea {
   font-weight: lighter;
   font-size: 16px;
   line-height: 1.4;
-  width: 500px;
-  height: 200px;
+  width: 50vw;
+  height: 50vh;
   transition: all 0.2s;
   margin: 1rem;
 }
