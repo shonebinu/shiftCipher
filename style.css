@@ -29,6 +29,8 @@ textarea {
   height: 50vh;
   transition: all 0.2s;
   margin: 1rem;
+  max-width: 40rem;
+  max-height: 20rem;
 }
 
 textarea:hover {
