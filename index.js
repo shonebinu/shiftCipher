@@ -1,10 +1,6 @@
 "use strict"
 
 //ShiftCipher
-function mod(n, m) {
-  return ((n % m) + m) % m;
-}
-
 const upperAlphabets = [
   'A', 'B', 'C', 'D', 'E', 'F',
   'G', 'H', 'I', 'J', 'K', 'L',
@@ -30,11 +26,11 @@ function encrypt(string, shift = 3) {
 
     if (upperAlphabets.includes(element)) {
 
-      splittedString.splice(i, 1, upperAlphabets[mod((upperAlphabets.indexOf(element) + shift), 26)])
+      splittedString.splice(i, 1, upperAlphabets.at(((upperAlphabets.indexOf(element) + shift) % 26)))
 
     } else if (lowerAlphabets.includes(element)) {
 
-      splittedString.splice(i, 1, lowerAlphabets[mod((lowerAlphabets.indexOf(element) + shift), 26)])
+      splittedString.splice(i, 1, lowerAlphabets.at(((lowerAlphabets.indexOf(element) + shift) % 26)))
 
     }
 
@@ -53,11 +49,11 @@ function decrypt(string, shift = 3) {
 
     if (upperAlphabets.includes(element)) {
 
-      splittedString.splice(i, 1, upperAlphabets[mod((upperAlphabets.indexOf(element) - shift), 26)])
+      splittedString.splice(i, 1, upperAlphabets.at(((upperAlphabets.indexOf(element) - shift) % 26)))
 
     } else if (lowerAlphabets.includes(element)) {
 
-      splittedString.splice(i, 1, lowerAlphabets[mod((lowerAlphabets.indexOf(element) - shift), 26)])
+      splittedString.splice(i, 1, lowerAlphabets.at(((lowerAlphabets.indexOf(element) - shift) % 26)))
 
     }
 
