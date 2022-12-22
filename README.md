@@ -6,6 +6,6 @@ A simple encryption program (Shift-Cipher) to learn the basics of encryption and
 ![Shift-Cipher Webapp screenshot](demoLive.png)
 
 ## Features
-- Unlimited Shift Value
+- Unlimited Shift Value, including negative shifts
 - Near Instant Results
 - Supports both encryption and decryption
