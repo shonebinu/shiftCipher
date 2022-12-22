@@ -30,11 +30,11 @@ function encrypt(string, shift = 3) {
 
     if (upperAlphabets.includes(element)) {
 
-      splittedString.splice(i, 1, upperAlphabets[(upperAlphabets.indexOf(element) + shift) % 26])
+      splittedString.splice(i, 1, upperAlphabets[mod((upperAlphabets.indexOf(element) + shift), 26)])
 
     } else if (lowerAlphabets.includes(element)) {
 
-      splittedString.splice(i, 1, lowerAlphabets[(lowerAlphabets.indexOf(element) + shift) % 26])
+      splittedString.splice(i, 1, lowerAlphabets[mod((lowerAlphabets.indexOf(element) + shift), 26)])
 
     }
 
